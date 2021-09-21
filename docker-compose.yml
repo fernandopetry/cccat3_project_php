@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  php:
+    build: ./
+    networks:
+      - backend
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - ENVIRONMENT=development
+
+networks:
+  backend:
