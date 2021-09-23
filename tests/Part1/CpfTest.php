@@ -20,6 +20,7 @@ class CpfTest extends TestCase
     {
         return [
             "String Vazia" => ["", false],
+            "String Parcial" => ["23712", false],
             "CPF Válido Sem o Digito" => ["237121535", false],
             "CPF Válido Formatado" => ["237.121.535-03", true],
             "CPF Válido Primeiro" => ["111.444.777-35", true],

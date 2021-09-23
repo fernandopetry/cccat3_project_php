@@ -71,7 +71,7 @@ class Order
     /**
      * @throws Exception
      */
-    public function handler()
+    public function handler(): bool
     {
         if (!$this->client->getCpf()->validate()) {
             throw new Exception('CPF Inválido');
