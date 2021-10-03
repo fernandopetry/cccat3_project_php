@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Part1\Order;
+namespace App\HomeWork\Order;
 
 class Coupon
 {

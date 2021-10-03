@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Part1\ValueObject;
+namespace App\HomeWork\ValueObject;
 
 class Cpf
 {

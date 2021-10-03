@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Part1\Client;
+namespace App\HomeWork\Client;
 
-use App\Part1\ValueObject\Cpf;
+use App\HomeWork\ValueObject\Cpf;
 
 class Client
 {

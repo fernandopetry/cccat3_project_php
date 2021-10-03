@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Part1\Order;
+namespace App\HomeWork\Order;
 
-use App\Part1\Client\Client;
+use App\HomeWork\Client\Client;
 use Exception;
 
 class Order

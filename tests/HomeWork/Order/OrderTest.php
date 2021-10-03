@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\Part1\Order;
+namespace Tests\HomeWork\Order;
 
-use App\Part1\Client\Client;
-use App\Part1\Order\Coupon;
-use App\Part1\Order\Item;
-use App\Part1\Order\Order;
-use App\Part1\ValueObject\Cpf;
+use App\HomeWork\Client\Client;
+use App\HomeWork\Order\Coupon;
+use App\HomeWork\Order\Item;
+use App\HomeWork\Order\Order;
+use App\HomeWork\ValueObject\Cpf;
 use Exception;
 use PHPUnit\Framework\TestCase;
 

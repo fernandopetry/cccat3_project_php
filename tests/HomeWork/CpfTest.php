@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Part1;
+namespace Tests\HomeWork;
 
-use App\Part1\ValueObject\Cpf;
+use App\HomeWork\ValueObject\Cpf;
 use PHPUnit\Framework\TestCase;
 
 class CpfTest extends TestCase
