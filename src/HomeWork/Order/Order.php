@@ -45,6 +45,11 @@ class Order
         if (!isset($this->coupon)) {
             return;
         }
+
+        if($this->coupon->isExpired()){
+            return;
+        }
+
         $this->discount = $this->totalWithoutDiscount * $this->coupon->getDiscount();
     }
 

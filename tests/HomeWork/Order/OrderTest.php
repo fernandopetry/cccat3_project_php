@@ -7,6 +7,7 @@ use App\HomeWork\Order\Coupon;
 use App\HomeWork\Order\Item;
 use App\HomeWork\Order\Order;
 use App\HomeWork\ValueObject\Cpf;
+use DateTimeImmutable;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
@@ -63,7 +64,7 @@ class OrderTest extends TestCase
     public function testDeveriaCalcularDesconto()
     {
         $order = self::generateOrder3Items(self::CPF_VALIDO);
-        $order->applyCoupon(new Coupon(1, 0.25));
+        $order->applyCoupon(new Coupon(1, 0.25, new DateTimeImmutable('now')));
         $order->handler();
 
         $discount = 7.8625;
@@ -95,7 +96,7 @@ class OrderTest extends TestCase
     public function testDeveFazerUmPedidoComCupomDeDesconto()
     {
         $order = self::generateOrder3Items(self::CPF_VALIDO);
-        $order->applyCoupon(new Coupon(1, 0.1));
+        $order->applyCoupon(new Coupon(1, 0.1, new DateTimeImmutable('now')));
         $order->handler();
 
         $sum = $order->getTotal() + $order->getDiscount();
@@ -109,6 +110,22 @@ class OrderTest extends TestCase
             self::SUM_ORDER_3_ITEMS,
             $order->getTotal(),
             'O valor total é igual ao valor do pedido, deveria ter um desconto aplicado.'
+        );
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function testNaoDeveAplicarCupomDeDescontoExpirado()
+    {
+        $order = self::generateOrder3Items(self::CPF_VALIDO);
+        $order->applyCoupon(new Coupon(1, 0.1, new DateTimeImmutable('2021-10-01')));
+        $order->handler();
+
+        self::assertSame(
+            self::SUM_ORDER_3_ITEMS,
+            $order->getTotal(),
+            'Não deveria aplicar cupom de desconto expirado!'
         );
     }
 }
