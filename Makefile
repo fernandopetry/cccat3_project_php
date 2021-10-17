@@ -2,6 +2,10 @@ CONTAINER_NAME	:= cccat3_project_php_php_1
 
 hello:
 	echo "Hello";
+start:
+	docker-compose up -d
+stop:
+	docker-compose down
 composer-install:
 	docker container exec -it $(CONTAINER_NAME) /usr/bin/composer install -o
 test:
