@@ -9,6 +9,7 @@ use Exception;
 
 class Order
 {
+    private string $id;
     /** @var Item[] */
     private array $items;
     private Coupon $coupon;
@@ -20,6 +21,7 @@ class Order
 
     public function __construct(Client $client)
     {
+        $this->id = uniqid();
         $this->client = $client;
     }
 
