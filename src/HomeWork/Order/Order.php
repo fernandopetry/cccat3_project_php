@@ -25,6 +25,11 @@ class Order
         $this->client = $client;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function addItems(Item $items): void
     {
         $this->items[] = $items;
