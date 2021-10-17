@@ -4,6 +4,8 @@ hello:
 	echo "Hello";
 start:
 	docker-compose up -d
+build:
+	docker-compose up -d --build --remove-orphans
 stop:
 	docker-compose down
 composer-install:
