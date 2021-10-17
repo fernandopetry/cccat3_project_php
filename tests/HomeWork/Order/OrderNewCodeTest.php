@@ -25,8 +25,8 @@ class OrderNewCodeTest extends TestCase
     public function provider(): array
     {
         return [
-            'Com o código anterior no mesmo ano' => ['20212','20211','2021-10-10'],
-            'Com o código anterior em ano anterior' => ['20211','20205','2021-10-10'],
+            'Com o código anterior no mesmo ano' => ['202100000002','20211','2021-10-10'],
+            'Com o código anterior em ano anterior' => ['202100000001','20205','2021-10-10'],
         ];
     }
 }

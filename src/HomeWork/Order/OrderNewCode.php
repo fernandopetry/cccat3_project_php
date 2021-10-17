@@ -26,6 +26,6 @@ class OrderNewCode
         if ($yearNow > $lastYear) {
             $codeBefore = 1;
         }
-        return $yearNow . $codeBefore;
+        return $yearNow . str_pad((string)$codeBefore, 8, '0', STR_PAD_LEFT);
     }
 }
